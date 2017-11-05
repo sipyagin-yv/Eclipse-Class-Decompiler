@@ -14,6 +14,7 @@ import org.eclipse.jdt.core.IPackageFragmentRoot;
 import org.eclipse.jdt.core.IType;
 import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.internal.compiler.env.IBinaryType;
+import org.eclipse.jdt.internal.core.NamedMember;
 import org.eclipse.jdt.internal.core.PackageFragmentRoot;
 import org.eclipse.jdt.internal.core.SourceMapper;
 import org.eclipse.jdt.internal.ui.javaeditor.IClassFileEditorInput;
@@ -212,7 +213,7 @@ public abstract class BaseDecompilerSourceMapper extends DecompilerSourceMapper
 
 		if ( originalSourceMapper.containsKey( root ) )
 		{
-			( (SourceMapper) originalSourceMapper.get( root ) ).mapSource( type,
+			( (SourceMapper) originalSourceMapper.get( root ) ).mapSource( (NamedMember) type,
 					source.toString( ).toCharArray( ),
 					null );
 		}

@@ -28,6 +28,7 @@ import org.eclipse.jdt.core.ToolFactory;
 import org.eclipse.jdt.core.formatter.CodeFormatter;
 import org.eclipse.jdt.internal.compiler.env.IBinaryType;
 import org.eclipse.jdt.internal.core.BinaryType;
+import org.eclipse.jdt.internal.core.NamedMember;
 import org.eclipse.jdt.internal.core.SourceMapper;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.text.BadLocationException;
@@ -83,7 +84,7 @@ public abstract class DecompilerSourceMapper extends SourceMapper
 		{
 			sourceRanges.remove( type );
 		}
-		super.mapSource( type, contents, null );
+		super.mapSource( (NamedMember) type, contents, null );
 	}
 
 	/**
